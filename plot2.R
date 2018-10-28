@@ -23,11 +23,12 @@ makePlot2<-function(){
   png("plot2.png", 480, 480)
   
   # Make plot2
-  ggplot(df, aes(x=df$dt, y=df$Global_active_power)) + 
+  print(ggplot(df, aes(x=df$dt, y=df$Global_active_power)) + 
          geom_line() + 
          labs(y = "Global Active Power (kilowatts)",x="") + 
          theme_bw() + 
-         theme(panel.grid = element_blank(),panel.background = element_blank())
+         theme(panel.grid = element_blank(),panel.background = element_blank()))
   # Close file
   dev.off()
+  
   }
