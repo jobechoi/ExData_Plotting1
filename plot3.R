@@ -48,9 +48,9 @@ makePlot3<-function(){
   df$dt<-dmy_hms(df$dt,tz="UTC")
   
   # Open device to print plot to plot3.png
-  # png("plot3.png", 480, 480)
-  # 
-  # print(
+  png("plot3.png", 480, 480)
+   
+  print(
     ggplot(data=df,aes(x=df$dt)) +
     
     # Plot the 3 lines for sub metering 1 through 3 and set color 
@@ -74,8 +74,8 @@ makePlot3<-function(){
     theme(legend.justification = c("right","top")) +
     theme(legend.position = c(1,1)) +
     theme(panel.grid = element_blank(),panel.background = element_blank())
-  # )
+  )
   
   # Close file
-  # dev.off()
+  dev.off()
 }
