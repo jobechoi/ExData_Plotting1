@@ -37,7 +37,7 @@ makePlot2<-function(){
   library(ggplot2)
   library(scales)
   
-  # Energy data file must be in working directory with plot3.R
+  # Energy data file must be in working directory with plot2.R
   # Set df to filtered read output on Dates '1/2/2007' or '2/2/2007'
   df<- read.csv.sql("household_power_consumption.txt",
                     "SELECT * FROM file WHERE Date = '1/2/2007' OR Date = '2/2/2007'",
