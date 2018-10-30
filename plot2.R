@@ -53,8 +53,8 @@ makePlot2<-function(){
   print(
     ggplot(data=df,aes(x=df$dt)) +
     
-    # Plot the 3 lines for sub metering 1 through 3 and set color 
-    # aesthetic to invoke legend
+    # Plot Global Active Power 
+    
     geom_line(aes(y=df$Global_active_power)) +
     labs(y = "Global Active Power (kilowatts)",x="") + 
     
