@@ -45,13 +45,13 @@ makePlot4<-function(){
   
   # Energy data file must be in working directory with plot4.R
   # Set df to filtered read output on Dates '1/2/2007' or '2/2/2007'
-  # df<- read.csv.sql("household_power_consumption.txt",
-  #                   "SELECT * FROM file WHERE Date = '1/2/2007' OR Date = '2/2/2007'",
-  #                   sep=";")
+  df<- read.csv.sql("household_power_consumption.txt",
+                    "SELECT * FROM file WHERE Date = '1/2/2007' OR Date = '2/2/2007'",
+                    sep=";")
   
   # Fix some date and time formatting
   df$dt<-paste(df$Date,df$Time,sep=" ")
-  df$dt<-mdy_hms(df$dt,tz="UTC")
+  df$dt<-dmy_hms(df$dt,tz="UTC")
   
   # Energy sub metering plot
   p1<-ggplot(data=df,aes(x=df$dt))
