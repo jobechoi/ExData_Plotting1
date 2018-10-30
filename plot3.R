@@ -45,7 +45,7 @@ makePlot3<-function(){
   
   # Fix some date and time formatting
   df$dt<-paste(df$Date,df$Time,sep=" ")
-  df$dt<-mdy_hms(df$dt,tz="UTC")
+  df$dt<-dmy_hms(df$dt,tz="UTC")
   
   # Open device to print plot to plot3.png
   # png("plot3.png", 480, 480)
